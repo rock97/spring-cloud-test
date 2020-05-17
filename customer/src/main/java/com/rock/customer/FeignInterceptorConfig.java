@@ -10,7 +10,6 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
-@Configuration
 public class FeignInterceptorConfig {
     @Bean("feignInterceptor")
     public RequestInterceptor getRequestInterceptor(){

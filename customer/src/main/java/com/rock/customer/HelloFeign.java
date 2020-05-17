@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@FeignClient(value = "SERVICE-PRODUCER",configuration = FeignInterceptorConfig.class)
+@FeignClient(value = "SERVICE-PRODUCER")
 public interface HelloFeign {
     @RequestMapping("/hi")
     public String home(@RequestParam String name);
