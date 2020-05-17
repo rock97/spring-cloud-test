@@ -10,7 +10,15 @@ public class HelloService {
     RestTemplate restTemplate;
     @Autowired
     private HelloFeign helloFeign;
+    @Autowired
+    private Hello2Feign hello2Feign;
     public String hiService(String name) {
-        return  helloFeign.home(name);
+        String home = helloFeign.home(name);
+        return home;
+
+    }
+    public String hello(String name){
+        String hello = hello2Feign.hello(name);
+        return hello;
     }
 }

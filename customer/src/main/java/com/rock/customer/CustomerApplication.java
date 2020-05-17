@@ -10,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableFeignClients(clients = HelloFeign.class)
+@EnableFeignClients(clients = {HelloFeign.class,Hello2Feign.class})
 
 public class CustomerApplication {
 
