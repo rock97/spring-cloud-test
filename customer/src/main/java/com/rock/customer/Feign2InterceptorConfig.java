@@ -3,24 +3,24 @@ package com.rock.customer;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Enumeration;
 import java.util.Map;
 
-@Configuration
-public class FeignInterceptorConfig {
-    @Bean("feignInterceptor")
+public class Feign2InterceptorConfig {
+    @Bean("feign2Interceptor")
     public RequestInterceptor getRequestInterceptor(){
-        return new FeignInterceptor();
+        return new Feign2Interceptor();
     }
-    class FeignInterceptor implements RequestInterceptor{
+    class Feign2Interceptor implements RequestInterceptor{
 
         @Override
         public void apply(RequestTemplate requestTemplate) {
-            System.out.println("   Feign  Interceptor ");
+            System.out.println("   Feign2Interceptor ");
             ServletRequestAttributes attributes = (ServletRequestAttributes)RequestContextHolder
                     .getRequestAttributes();
             if(attributes == null){

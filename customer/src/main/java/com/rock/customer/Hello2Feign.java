@@ -4,7 +4,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(value = "SERVICE-PRODUCER2")
+@FeignClient(value = "SERVICE-PRODUCER2",configuration = Feign2InterceptorConfig.class)
 public interface Hello2Feign {
     @RequestMapping("/hello")
     String hello(@RequestParam String name);
