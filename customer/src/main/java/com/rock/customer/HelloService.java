@@ -8,8 +8,9 @@ import org.springframework.web.client.RestTemplate;
 public class HelloService {
     @Autowired
     RestTemplate restTemplate;
-
+    @Autowired
+    private HelloFeign helloFeign;
     public String hiService(String name) {
-        return restTemplate.getForObject("http://SERVICE-PRODUCER/hi?name=" + name, String.class);
+        return  helloFeign.home(name);
     }
 }
